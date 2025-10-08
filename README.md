@@ -1,50 +1,133 @@
-# Welcome to your Expo app 👋
+# Front Pochini Backup
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+React Native мобильное приложение для аутентификации пользователей с верификацией через код подтверждения.
 
-## Get started
 
-1. Install dependencies
+## Технологии
 
-   ```bash
-   npm install
-   ```
+- **React Native** - фреймворк для разработки мобильных приложений
+- **TypeScript** - типизированный JavaScript
+- **MobX** - управление состоянием
+- **Axios** - HTTP клиент
+- **Jest** - фреймворк для тестирования
+- **React Native Testing Library** - тестирование компонентов
 
-2. Start the app
+## Требования
 
-   ```bash
-   npx expo start
-   ```
 
-In the output, you'll find options to open the app in a
+- **Node.js** >= 18.18.0
+- **npm** >= 8.0.0
+- **React Native CLI** (для запуска на устройстве/эмуляторе)
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+Проверьте версии:
 
 ```bash
-npm run reset-project
+node -v   # v18.18.0 или выше
+npm -v    # 8.0.0 или выше
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+---
 
-## Learn more
+## Установка
 
-To learn more about developing your project with Expo, look at the following resources:
+### 1. Клонируйте репозиторий
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+```bash
+git clone https://github.com/ваш_username/Front_pochini_backup.git
+cd Front_pochini_backup
+```
 
-## Join the community
+### 2. Установите зависимости
 
-Join our community of developers creating universal apps.
+```bash
+npm install
+```
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+### 3. Настройте окружение
+
+Создайте файл `.env` в корне проекта:
+
+```bash
+cat > .env << 'EOF'
+API_URL=http://localhost:3000/api
+EOF
+```
+
+## Запуск проекта
+
+### Запуск Metro Bundler
+
+```bash
+npm start
+```
+
+### Запуск на Android
+
+```bash
+# В отдельном терминале
+npm run android
+```
+
+### Запуск на iOS (только macOS)
+
+```bash
+# Установите pods
+cd ios && pod install && cd ..
+
+# Запустите
+npm run ios
+```
+
+### Запуск в режиме разработки
+
+```bash
+# Metro bundler
+npm start
+
+# В другом терминале - Android
+npx react-native run-android
+
+# Или iOS
+npx react-native run-ios
+```
+
+---
+
+## Тестирование
+
+### Запуск всех тестов
+
+```bash
+npm test
+```
+
+### Запуск с покрытием кода
+
+```bash
+npm run test:coverage
+```
+
+Или напрямую через Jest:
+
+```bash
+npx jest --coverage
+```
+
+### Запуск в watch режиме
+
+```bash
+npm run test:watch
+```
+
+### Запуск конкретного теста
+
+```bash
+npm test -- test1-authModel-setUser
+```
+
+### Очистка кэша
+
+```bash
+npx jest --clearCache
+```
+
